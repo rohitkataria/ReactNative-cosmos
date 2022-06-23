@@ -13,20 +13,21 @@ import {
   Text,
   View,
 } from 'react-native';
+import { Button } from './components';
 
 const App = () => {
-
-
   return (
-    <SafeAreaView style={{ flex: 2, backgroundColor: 'white' }}>
-      <View style={{ flex: 2, justifyContent: 'center', alignItems: 'center' }}>
-        <Text style={{ alignItems: 'center' }}>
+    
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        {/* <Text style={{ alignItems: 'center' }}>
           React native project
-        </Text>
+        </Text> */}
+        <Button/>
       </View>
-    </SafeAreaView>
+    
   );
 };
-
-
 export default App;
+module.exports = __DEV__
+  ? require('./App.cosmos')
+  : require('./App.main');
